@@ -1,0 +1,116 @@
+
+/* Mobile-specific optimizations */
+
+/* Touch-friendly interface improvements */
+.touch-manipulation {
+  touch-action: manipulation;
+}
+
+.touch-friendly {
+  @apply select-none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.touch-friendly button,
+.touch-friendly [role="button"] {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Enhanced mobile gantt */
+.touch-optimized-gantt {
+  @apply relative;
+  /* Prevent bounce scrolling on iOS */
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+.touch-optimized-gantt .gantt-job {
+  @apply p-3 min-h-[60px];
+  /* Larger touch targets for mobile */
+  min-width: 120px;
+}
+
+/* Mobile swipe indicators */
+.swipe-indicator {
+  @apply absolute inset-x-0 bottom-0 p-2 text-center text-xs text-muted-foreground;
+  background: linear-gradient(transparent, rgba(0,0,0,0.1));
+}
+
+/* Mobile-optimized animations */
+@media (prefers-reduced-motion: no-preference) {
+  .mobile-slide-in {
+    animation: slideInMobile 0.3s ease-out;
+  }
+  
+  .mobile-slide-out {
+    animation: slideOutMobile 0.3s ease-in;
+  }
+}
+
+@keyframes slideInMobile {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutMobile {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+/* Mobile-specific responsive breakpoints */
+@media (max-width: 768px) {
+  .gantt-container {
+    @apply px-2;
+  }
+  
+  .gantt-row-header {
+    min-width: 120px;
+    max-width: 120px;
+  }
+  
+  .gantt-timeline-cell {
+    min-width: 80px;
+  }
+  
+  /* Stack dashboard widgets on mobile */
+  .dashboard-grid {
+    @apply grid-cols-1 gap-3;
+  }
+  
+  /* Mobile-friendly tooltips */
+  .tooltip-modern {
+    @apply text-base p-4;
+    max-width: calc(100vw - 40px);
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2) {
+  .gantt-job {
+    @apply border-2;
+  }
+}
+
+/* Dark mode mobile optimizations */
+@media (prefers-color-scheme: dark) {
+  .touch-optimized-gantt {
+    @apply bg-background;
+  }
+  
+  .mobile-card {
+    @apply border-border/50;
+  }
+}

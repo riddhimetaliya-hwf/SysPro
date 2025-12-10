@@ -1,0 +1,286 @@
+
+/* Modern layout system with enhanced design */
+
+/* Enhanced Configuration Panel */
+.config-panel {
+  @apply backdrop-blur-sm bg-background/80 text-card-foreground rounded-xl shadow-medium border border-white/10;
+  @apply p-6 transition-all duration-300 ease-out;
+  @apply hover:shadow-strong hover:-translate-y-1;
+}
+
+/* Modern Sidebar with glass effect */
+.sidebar {
+  @apply bg-card/95 backdrop-blur-md text-card-foreground border-r border-white/10;
+  @apply h-screen fixed left-0 top-0 w-[280px] z-20;
+  @apply transition-all duration-300 ease-out shadow-strong;
+}
+
+.sidebar.collapsed {
+  @apply w-[72px];
+}
+
+.sidebar-nav-item {
+  @apply flex items-center gap-3 px-4 py-3 mx-2 rounded-xl;
+  @apply text-muted-foreground hover:text-foreground hover:bg-accent/80;
+  @apply transition-all duration-200 font-medium relative overflow-hidden;
+  @apply hover:shadow-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2;
+}
+
+.sidebar-nav-item::before {
+  content: '';
+  @apply absolute left-0 top-0 w-1 h-full bg-primary transform scale-y-0 transition-transform duration-200;
+}
+
+.sidebar-nav-item.active {
+  @apply bg-primary/15 text-primary border border-primary/20 shadow-soft;
+}
+
+.sidebar-nav-item.active::before {
+  @apply scale-y-100;
+}
+
+/* Enhanced layout containers */
+.page-container {
+  @apply h-screen flex flex-col overflow-hidden font-jakarta;
+  background: linear-gradient(135deg, hsl(var(--background)), hsl(var(--muted)));
+}
+
+.main-content {
+  @apply flex-1 overflow-hidden flex flex-col;
+  @apply relative;
+}
+
+.main-content::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 pointer-events-none;
+}
+
+.content-area {
+  @apply flex-1 overflow-auto p-6 md:p-8 relative z-10;
+  @apply space-y-8;
+}
+
+/* Modern card layouts */
+.card-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+.info-card {
+  @apply backdrop-blur-sm bg-background/80 text-card-foreground p-6 rounded-xl shadow-medium;
+  @apply hover:shadow-strong hover:-translate-y-1 transition-all duration-300;
+  @apply border border-white/10 cursor-pointer;
+}
+
+.info-card-header {
+  @apply flex items-center justify-between mb-4;
+}
+
+.info-card-title {
+  @apply text-lg font-semibold text-foreground;
+}
+
+.info-card-value {
+  @apply text-2xl font-bold text-primary;
+}
+
+/* Enhanced section layouts */
+.section-header {
+  @apply mb-8 pb-4 border-b border-border/30;
+  @apply relative;
+}
+
+.section-header::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-12 h-0.5 bg-primary;
+}
+
+.section-title {
+  @apply text-3xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent;
+  @apply relative;
+}
+
+.section-description {
+  @apply text-muted-foreground mt-2 text-lg leading-relaxed;
+}
+
+/* Modern form layouts */
+.form-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-6;
+}
+
+.form-section {
+  @apply space-y-6;
+}
+
+.form-group {
+  @apply space-y-3;
+}
+
+.form-label {
+  @apply text-sm font-semibold text-foreground block mb-2;
+  @apply relative;
+}
+
+.form-input {
+  @apply w-full px-4 py-3 rounded-xl border-2 border-border bg-background/50 backdrop-blur-sm;
+  @apply text-sm focus:border-primary focus:shadow-medium focus:bg-background;
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2;
+  @apply hover:border-muted-foreground/30 hover:shadow-soft transition-all duration-300;
+}
+
+/* Enhanced table layouts */
+.table-container {
+  @apply rounded-xl border border-white/10 overflow-hidden shadow-medium;
+  @apply backdrop-blur-sm bg-background/80;
+}
+
+.responsive-table {
+  @apply w-full;
+}
+
+.responsive-table thead {
+  @apply bg-muted/30 sticky top-0 backdrop-blur-sm z-10;
+}
+
+.responsive-table th {
+  @apply p-4 text-sm font-semibold text-muted-foreground text-left;
+  @apply border-b border-border/30;
+}
+
+.responsive-table td {
+  @apply p-4 border-b border-border/20;
+  @apply text-sm text-foreground;
+}
+
+.responsive-table tbody tr {
+  @apply hover:bg-accent/20 transition-colors duration-200;
+  @apply hover:shadow-soft;
+}
+
+/* Modern flex utilities */
+.center-flex {
+  @apply flex items-center justify-center gap-3;
+}
+
+.space-between-flex {
+  @apply flex items-center justify-between gap-4;
+}
+
+/* Enhanced dividers */
+.divider {
+  @apply h-px w-full bg-gradient-to-r from-transparent via-border to-transparent my-8;
+}
+
+.divider-with-text {
+  @apply relative flex items-center justify-center my-8;
+}
+
+.divider-with-text::before {
+  content: '';
+  @apply absolute inset-0 flex items-center;
+}
+
+.divider-with-text::before {
+  @apply w-full h-px bg-gradient-to-r from-transparent via-border to-transparent;
+}
+
+.divider-text {
+  @apply relative bg-background px-4 text-sm text-muted-foreground font-medium;
+}
+
+/* Enhanced status badges */
+.status-badge {
+  @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold;
+  @apply transition-all duration-200 shadow-soft;
+  @apply hover:shadow-medium hover:scale-105;
+}
+
+.priority-badge {
+  @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold;
+  @apply transition-all duration-200 shadow-soft;
+  @apply hover:shadow-medium hover:scale-105;
+}
+
+/* Modern loading states */
+.loading-container {
+  @apply flex items-center justify-center p-8;
+}
+
+.loading-spinner {
+  @apply w-8 h-8 text-primary relative;
+}
+
+.loading-spinner::before {
+  content: '';
+  @apply absolute inset-0 rounded-full border-2 border-primary/20;
+  @apply border-t-primary animate-spin;
+}
+
+/* Enhanced empty states */
+.empty-state {
+  @apply text-center py-16 px-6 backdrop-blur-sm bg-background/80 rounded-xl;
+}
+
+.empty-state-icon {
+  @apply mx-auto h-16 w-16 text-muted-foreground mb-6;
+  @apply p-4 rounded-full bg-muted/30;
+}
+
+.empty-state-title {
+  @apply text-xl font-semibold text-foreground mb-3;
+}
+
+.empty-state-description {
+  @apply text-muted-foreground leading-relaxed max-w-md mx-auto;
+}
+
+/* Modern responsive adjustments */
+@media (max-width: 768px) {
+  .sidebar {
+    @apply w-[72px];
+  }
+  
+  .sidebar.expanded {
+    @apply w-[280px];
+  }
+
+  .content-area {
+    @apply p-4 space-y-6;
+  }
+
+  .section-title {
+    @apply text-2xl;
+  }
+
+  .card-grid {
+    @apply grid-cols-1 gap-4;
+  }
+
+  .form-grid {
+    @apply grid-cols-1;
+  }
+}
+
+/* Enhanced accessibility */
+.focus-visible:focus-visible {
+  @apply outline-none ring-2 ring-primary/50 ring-offset-2;
+}
+
+/* Modern scroll styles */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--muted-foreground) / 0.3) transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/30 rounded-full hover:bg-muted-foreground/50;
+  @apply transition-colors duration-200;
+}

@@ -1,0 +1,309 @@
+
+/* Modern Blue-Green Gantt Chart Styling */
+.gantt-container {
+  @apply relative;
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.05) 0%, rgba(59, 130, 246, 0.08) 50%, rgba(255, 255, 255, 0.95) 100%);
+  min-height: calc(100vh - 12rem);
+  max-width: 100%;
+  margin: 0;
+  border-radius: 16px;
+  overflow: hidden; /* KEEP THIS */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  box-shadow: 0 8px 32px rgba(59, 130, 246, 0.1);
+}
+
+.gantt-timeline {
+  @apply flex border-b;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(34, 197, 94, 0.1) 100%);
+  height: 80px;
+  overflow-x: hidden;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  backdrop-filter: blur(16px);
+  border-bottom: 2px solid rgba(59, 130, 246, 0.3);
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.1);
+}
+
+.gantt-timeline .gantt-row-header {
+  position: relative;
+  left: 0;
+  z-index: 31;
+}
+
+.gantt-timeline-cell {
+  @apply flex flex-col items-center justify-center border-r p-3;
+  min-width: 0; /* allow React's inline width to control size */
+  width: auto; /* fallback */
+  flex: 1 1 auto; /* allow it to stretch evenly in week view */
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%);
+  border-right: 1px solid rgba(34, 197, 94, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.gantt-timeline-cell::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.6), rgba(34, 197, 94, 0.6), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gantt-timeline-cell:hover::before {
+  opacity: 1;
+}
+
+.gantt-timeline-cell:hover {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(34, 197, 94, 0.1) 100%);
+  transform: translateY(-2px);
+}
+
+.gantt-row {
+  @apply flex border-b relative;
+  min-height: 90px;
+  background: linear-gradient(90deg, rgba(34, 197, 94, 0.02) 0%, transparent 20%);
+  border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: visible;
+  min-width: 0; 
+}
+
+.gantt-row:hover {
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0.08) 0%, rgba(34, 197, 94, 0.04) 20%, transparent 40%);
+  box-shadow: inset 0 0 0 1px rgba(59, 130, 246, 0.2);
+}
+
+.gantt-row-header {
+  @apply border-r flex items-center p-4 font-medium;
+  width: 240px;
+  min-width: 240px;
+  max-width: 240px;
+  height: 90px;
+  position: sticky;
+  left: 0;
+  z-index: 20;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(59, 130, 246, 0.05) 100%);
+  backdrop-filter: blur(12px);
+  border-right: 2px solid rgba(34, 197, 94, 0.3);
+  box-shadow: 4px 0 16px rgba(59, 130, 246, 0.1);
+}
+
+.gantt-row-header:hover {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(34, 197, 94, 0.08) 100%);
+  transform: translateX(2px);
+}
+
+.gantt-row-content {
+  @apply flex-1 relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  display: flex;
+}
+
+.gantt-row-content > .gantt-cell,
+.gantt-row-content > .gantt-timeline-cell {
+  @apply flex-shrink-0; 
+  max-width: 100%;      
+  box-sizing: border-box;
+}
+
+.gantt-cell {
+  @apply border-r relative;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, transparent 100%);
+  border-right: 1px solid rgba(34, 197, 94, 0.05);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  pointer-events: auto !important;
+  z-index: 1 !important;
+}
+
+
+.gantt-row-content > .gantt-cell {
+  flex: none !important; /* Prevent flex growing/shrinking */
+  width: auto !important; /* Let React control width */
+}
+
+.gantt-cell:hover {
+  background: linear-gradient(180deg, rgba(59, 130, 246, 0.06) 0%, rgba(34, 197, 94, 0.03) 100%);
+}
+
+.gantt-job {
+  pointer-events: none !important; /* Allow clicks to pass through to cells */
+  z-index: 10 !important;
+}
+
+.gantt-job[draggable="true"] {
+  pointer-events: auto !important;
+}
+
+.gantt-job:active {
+  z-index: 100 !important;
+}
+
+.gantt-job-card {
+  @apply absolute rounded-xl p-3 cursor-move shadow-md text-sm font-medium;
+  height: 60px;
+  min-width: 100px;
+  z-index: 10;
+  backdrop-filter: blur(8px);
+  border: 2px solid transparent;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.2s ease-out,
+              border-color 0.3s ease;
+  overflow: hidden;
+}
+
+.gantt-job-card-dragging {
+  opacity: 0.5;
+  transform: scale(0.95);
+  z-index: 100;
+}
+
+.gantt-job::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  z-index: -1;
+}
+
+.gantt-job:hover {
+  z-index: 100;
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(59, 130, 246, 0.2);
+  border-color: rgba(34, 197, 94, 0.4);
+  animation: job-card-hover 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes job-card-hover {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-4px) scale(1.02); }
+}
+
+.gantt-job:hover::before {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(34, 197, 94, 0.1) 100%);
+}
+
+/* Updated blue-green job colors replacing orange/red */
+.gantt-job-no-conflict {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.8) 100%);
+  color: #334155;
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.gantt-job-capacity-conflict {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.9) 0%, rgba(37, 99, 235, 0.8) 100%);
+  color: white;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+.gantt-job-material-conflict {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.9) 0%, rgba(22, 163, 74, 0.8) 100%);
+  color: white;
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+}
+
+.gantt-job-resource-conflict {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.9) 0%, rgba(5, 150, 105, 0.8) 100%);
+  color: white;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+}
+
+.gantt-job-dependency {
+  border: 2px solid rgba(59, 130, 246, 0.6);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3), inset 0 0 20px rgba(34, 197, 94, 0.1);
+}
+
+/* Modern scrollbar styling with blue-green theme */
+.gantt-container::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.gantt-container::-webkit-scrollbar-track {
+  background: rgba(34, 197, 94, 0.1);
+  border-radius: 4px;
+}
+
+.gantt-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.6) 0%, rgba(34, 197, 94, 0.8) 100%);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.gantt-container::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.8) 0%, rgba(34, 197, 94, 1) 100%);
+}
+
+/* Modern loading animation with blue-green theme */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.4;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.4);
+  }
+}
+
+.gantt-loading {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Weekend styling with blue-green theme */
+.gantt-weekend {
+  background: linear-gradient(180deg, rgba(59, 130, 246, 0.08) 0%, rgba(34, 197, 94, 0.04) 100%);
+}
+
+/* Today indicator with green accent */
+.gantt-today {
+  background: linear-gradient(180deg, rgba(34, 197, 94, 0.15) 0%, rgba(34, 197, 94, 0.08) 100%);
+  border-left: 3px solid rgba(34, 197, 94, 0.8);
+  box-shadow: inset 0 0 20px rgba(34, 197, 94, 0.1);
+  overflow: hidden;
+}
+
+.gantt-today::-webkit-scrollbar {
+  display: none;
+}
+
+/* 🚀 ADD: Drop zone styling for better visual feedback */
+.gantt-cell.drag-over {
+  background: linear-gradient(180deg, rgba(34, 197, 94, 0.2) 0%, rgba(34, 197, 94, 0.1) 100%) !important;
+  border: 2px dashed rgba(34, 197, 94, 0.6) !important;
+  box-shadow: inset 0 0 20px rgba(34, 197, 94, 0.2);
+}
+
+.gantt-cell.drop-target {
+  background: linear-gradient(180deg, rgba(59, 130, 246, 0.2) 0%, rgba(59, 130, 246, 0.1) 100%) !important;
+  border: 2px solid rgba(59, 130, 246, 0.6) !important;
+}
+
+/* 🚀 ADD: Force cells to respect their assigned widths */
+.gantt-timeline-cell,
+.gantt-cell {
+  box-sizing: border-box !important;
+  flex-shrink: 0 !important;
+}
+
+/* 🚀 FIX: Week view vs Month view sizing */
+.gantt-row-content[style*="width: 100%"] .gantt-cell {
+  flex: 1 1 0 !important; /* Only flex in week view */
+}
+
+.gantt-row-content:not([style*="width: 100%"]) .gantt-cell {
+  flex: none !important; /* Fixed width in month view */
+}

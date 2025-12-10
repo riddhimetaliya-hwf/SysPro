@@ -1,0 +1,171 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Modern login page animations */
+@keyframes cardIn {
+  0% { opacity: 0; transform: translateY(40px) scale(0.98); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes btnIn {
+  0% { opacity: 0; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes inputIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.7); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes imgIn {
+  0% { opacity: 0; transform: translateY(30px) scale(0.95); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes bgFade {
+  0% { filter: brightness(0.95) saturate(0.8); }
+  100% { filter: brightness(1) saturate(1); }
+}
+.animate-cardIn { animation: cardIn 0.7s cubic-bezier(0.4,0,0.2,1) both; }
+.animate-fadeIn { animation: fadeIn 1s ease both; }
+.animate-btnIn { animation: btnIn 0.7s 0.2s cubic-bezier(0.4,0,0.2,1) both; }
+.animate-inputIn { animation: inputIn 0.7s 0.1s cubic-bezier(0.4,0,0.2,1) both; }
+.animate-popIn { animation: popIn 0.7s cubic-bezier(0.4,0,0.2,1) both; }
+.animate-imgIn { animation: imgIn 1s 0.3s cubic-bezier(0.4,0,0.2,1) both; }
+.animate-bgFade { animation: bgFade 1.2s ease both; }
+.animate-panelIn { animation: cardIn 0.8s 0.1s cubic-bezier(0.4,0,0.2,1) both; }
+
+/* Full-window animated gradient background */
+.bg-animated-gradient {
+  background: linear-gradient(120deg, #6a82fb 0%, #fc5c7d 100%);
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glassmorphic form */
+.backdrop-blur-xl {
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+.bg-white\/20 {
+  background: rgba(255,255,255,0.20);
+}
+.border-white\/30 {
+  border-color: rgba(255,255,255,0.30);
+}
+
+/* Animated background shapes */
+@keyframes bgMove1 {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(40px) scale(1.1); }
+  100% { transform: translateY(0) scale(1); }
+}
+@keyframes bgMove2 {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-40px) scale(1.05); }
+  100% { transform: translateY(0) scale(1); }
+}
+.animate-bgMove1 { animation: bgMove1 8s ease-in-out infinite; }
+.animate-bgMove2 { animation: bgMove2 10s ease-in-out infinite; }
+
+/* Floating label support for inputs */
+input:focus ~ label,
+input:not(:placeholder-shown) ~ label {
+  top: -1.5rem;
+  font-size: 0.85rem;
+  color: #fff;
+  opacity: 0.95;
+}
+
+/* Animate form and elements */
+@keyframes cardIn {
+  0% { opacity: 0; transform: translateY(40px) scale(0.98); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes btnIn {
+  0% { opacity: 0; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes inputIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.7); }
+  100% { opacity: 1; transform: scale(1); }
+}
+.animate-cardIn { animation: cardIn 0.7s cubic-bezier(0.4,0,0.2,1) both; }
+.animate-fadeIn { animation: fadeIn 1s ease both; }
+.animate-btnIn { animation: btnIn 0.7s 0.2s cubic-bezier(0.4,0,0.2,1) both; }
+.animate-inputIn { animation: inputIn 0.7s 0.1s cubic-bezier(0.4,0,0.2,1) both; }
+.animate-popIn { animation: popIn 0.7s cubic-bezier(0.4,0,0.2,1) both; }
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .px-8 { padding-left: 1rem !important; padding-right: 1rem !important; }
+  .py-10 { padding-top: 2rem !important; padding-bottom: 2rem !important; }
+  .max-w-md { max-width: 95vw !important; }
+  .h-12, .w-12 { height: 2.5rem !important; width: 2.5rem !important; }
+}
+
+/* Ensure dark text for login form */
+.bg-animated-gradient, .backdrop-blur-xl, .bg-white\/20, .border-white\/30 {
+  color: #222 !important;
+}
+input, label, .text-gray-900, .text-gray-700, .text-gray-500 {
+  color: #222 !important;
+}
+/* Keep button text white for contrast */
+button, .text-white {
+  color: #fff !important;
+}
