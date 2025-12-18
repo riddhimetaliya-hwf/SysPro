@@ -1,0 +1,471 @@
+[
+  {
+    "ContainingType": "SysPro.API.Endpoints.AdvancedAnalysisEndpoint",
+    "Method": "DeleteMachineMetric",
+    "RelativePath": "api/advanced-analysis/machine/{workCentre}",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "workCentre",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Advanced Analysis"
+    ],
+    "EndpointName": "DeleteMachineMetric",
+    "Summary": "Delete machine metric by WorkCentre"
+  },
+  {
+    "ContainingType": "SysPro.API.Endpoints.AdvancedAnalysisEndpoint",
+    "Method": "GetPerformanceAnalytics",
+    "RelativePath": "api/advanced-analysis/performance-analytics",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Advanced Analysis"
+    ],
+    "EndpointName": "GetPerformanceAnalytics",
+    "Summary": "Get KPIs and Machine performance analytics"
+  },
+  {
+    "ContainingType": "SysPro.API.Endpoints.DependenciesEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapDependenciesEndpoint\u003Eb__0_0",
+    "RelativePath": "api/dependencies",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "masterJob",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[SysPro.API.Endpoints.JobDependency, SysPro.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
+      }
+    ],
+    "Tags": [
+      "Dependencies"
+    ]
+  },
+  {
+    "ContainingType": "SysPro.API.Endpoints.ERPIntegrationEndpoint",
+    "Method": "GetInventory",
+    "RelativePath": "api/erpintegration/inventory",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "ERPIntegration"
+    ],
+    "EndpointName": "Inventory",
+    "Summary": "Show Inventory Data"
+  },
+  {
+    "ContainingType": "SysPro.API.Endpoints.ERPIntegrationEndpoint",
+    "Method": "GetJobMaterialReadiness",
+    "RelativePath": "api/erpintegration/job-material-readiness",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "ERPIntegration"
+    ],
+    "EndpointName": "JobMaterialReadiness",
+    "Summary": "Show Job Material Readiness Data"
+  },
+  {
+    "ContainingType": "SysPro.API.Endpoints.JobFilter",
+    "Method": "GetJobDetails",
+    "RelativePath": "api/jobfilter/job-details",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "job",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Job Filter"
+    ],
+    "EndpointName": "GetJobDetails",
+    "Summary": "Get job details for a given job or all jobs if not specified"
+  },
+  {
+    "ContainingType": "SysPro.API.Endpoints.JobFilter",
+    "Method": "GetJobStatus",
+    "RelativePath": "api/jobfilter/job-status",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Job Filter"
+    ],
+    "EndpointName": "GetJobStatus",
+    "Summary": "Get jobs by status: On Hold, Pending, Complete, or All"
+  },
+  {
+    "ContainingType": "SysPro.API.Endpoints.JobFilter",
+    "Method": "GetJobsByCrewSkill",
+    "RelativePath": "api/jobfilter/jobs-by-crew-skill",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "crewSkill",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Job Filter"
+    ],
+    "EndpointName": "GetJobsByCrewSkill",
+    "Summary": "Get jobs by crew skill or all jobs if crew skill is not provided"
+  },
+  {
+    "ContainingType": "SysPro.API.Endpoints.JobFilter",
+    "Method": "GetJobsByMachine",
+    "RelativePath": "api/jobfilter/jobs-by-machine",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "machine",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Job Filter"
+    ],
+    "EndpointName": "GetJobsByMachine",
+    "Summary": "Get jobs by machine or all jobs if machine is not provided"
+  },
+  {
+    "ContainingType": "SysPro.API.Endpoints.JobFilter",
+    "Method": "GetJobsByMaterial",
+    "RelativePath": "api/jobfilter/jobs-by-material",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "material",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Job Filter"
+    ],
+    "EndpointName": "GetJobsByMaterial",
+    "Summary": "Get jobs by material or all jobs if material is not provided"
+  },
+  {
+    "ContainingType": "SysPro.API.Endpoints.JobFilter",
+    "Method": "GetJobsByProduct",
+    "RelativePath": "api/jobfilter/jobs-by-product",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "product",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Job Filter"
+    ],
+    "EndpointName": "GetJobsByProduct",
+    "Summary": "Get jobs by product or all jobs if no product is provided"
+  },
+  {
+    "ContainingType": "SysPro.API.Endpoints.JobFilter",
+    "Method": "SmartSearch",
+    "RelativePath": "api/jobfilter/smart-search",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "searchTerm",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Job Filter"
+    ],
+    "EndpointName": "SmartSearch",
+    "Summary": "Smart search for jobs, machines, and materials"
+  },
+  {
+    "ContainingType": "SysPro.API.Endpoints.RulesEnginEndpoints",
+    "Method": "GetRulesDashboard",
+    "RelativePath": "api/rule-engine/dashboard",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Rule Engine"
+    ],
+    "EndpointName": "GetRulesDashboard",
+    "Summary": "Get rules engine dashboard results (priority jobs \u0026 machine cooldowns)"
+  },
+  {
+    "ContainingType": "SysPro.API.Endpoints.RulesEnginEndpoints",
+    "Method": "DeleteRuleByJob",
+    "RelativePath": "api/rule-engine/job/{jobId}",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "jobId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Rule Engine"
+    ],
+    "EndpointName": "DeleteRuleByJob",
+    "Summary": "Delete a rule from the rules engine by Job ID"
+  },
+  {
+    "ContainingType": "SysPro.API.Endpoints.SchedulingEndpoints",
+    "Method": "GetJobDetails",
+    "RelativePath": "api/scheduling/job",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Scheduling"
+    ],
+    "EndpointName": "GetJob",
+    "Summary": "Get all Pending Job data"
+  },
+  {
+    "ContainingType": "SysPro.API.Endpoints.SchedulingEndpoints",
+    "Method": "GetConflictDashboard",
+    "RelativePath": "api/scheduling/job-conflict",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "jobIds",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Scheduling"
+    ],
+    "EndpointName": "GetConflictDashboard",
+    "Summary": "Get details of jobs with conflict"
+  },
+  {
+    "ContainingType": "SysPro.API.Endpoints.SchedulingEndpoints",
+    "Method": "GetJobDashboard",
+    "RelativePath": "api/scheduling/job-dashboard",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Scheduling"
+    ],
+    "EndpointName": "GetJobDashboard",
+    "Summary": "Get simplified job dashboard data"
+  },
+  {
+    "ContainingType": "SysPro.API.Endpoints.SchedulingEndpoints",
+    "Method": "UpdateJobSchedule",
+    "RelativePath": "api/scheduling/update-job",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Scheduling"
+    ],
+    "EndpointName": "UpdateJob",
+    "Summary": "Update particular job"
+  },
+  {
+    "ContainingType": "SysPro.API.Endpoints.SmartAlerts",
+    "Method": "GetAlerts",
+    "RelativePath": "api/smart-alert/alert",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Alerts"
+    ],
+    "Summary": "Get API for smart alerts"
+  }
+]

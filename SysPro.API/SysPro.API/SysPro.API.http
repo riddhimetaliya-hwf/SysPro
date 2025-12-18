@@ -1,0 +1,6 @@
+@SysPro.API_HostAddress = https://localhost:7104
+
+GET {{SysPro.API_HostAddress}}/api/scheduling/job
+Accept: application/json
+
+###
