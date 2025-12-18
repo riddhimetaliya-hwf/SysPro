@@ -1,0 +1,216 @@
+
+/* Modern micro-interactions and animations */
+
+/* Enhanced button interactions */
+.btn-primary {
+  @apply bg-primary text-primary-foreground transition-all duration-300 ease-out;
+  @apply hover:bg-primary-hover hover:shadow-medium hover:scale-[1.02];
+  @apply active:bg-primary-active active:scale-[0.98] active:shadow-soft;
+  @apply focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2;
+}
+
+.btn-ghost {
+  @apply hover:bg-accent hover:text-accent-foreground transition-all duration-200;
+  @apply relative overflow-hidden;
+  @apply hover:shadow-soft hover:scale-[1.01];
+}
+
+.btn-ghost::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent;
+  @apply transform -translate-x-full transition-transform duration-500 ease-out;
+}
+
+.btn-ghost:hover::before {
+  @apply translate-x-full;
+}
+
+/* Modern card interactions */
+.card-interactive {
+  @apply transition-all duration-300 ease-out cursor-pointer;
+  @apply hover:shadow-medium hover:-translate-y-1 hover:scale-[1.01];
+  @apply active:scale-[0.99] active:shadow-soft;
+}
+
+.card-elevated {
+  @apply shadow-medium backdrop-blur-sm;
+  @apply border border-white/10;
+}
+
+.card-glass {
+  @apply backdrop-blur-sm bg-background/80 shadow-soft;
+  @apply hover:shadow-medium transition-all duration-300;
+}
+
+/* Enhanced loading states */
+.loading-shimmer {
+  @apply relative overflow-hidden bg-muted/30 rounded-md;
+}
+
+.loading-shimmer::after {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-r from-transparent via-primary/20 to-transparent;
+  @apply animate-shimmer;
+}
+
+.loading-pulse {
+  @apply animate-pulse bg-gradient-to-r from-muted via-muted/50 to-muted rounded-md;
+}
+
+/* Enhanced focus states */
+.focus-enhanced {
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2;
+  @apply transition-all duration-200 ease-out;
+}
+
+.focus-enhanced:focus-visible {
+  @apply shadow-medium scale-[1.01];
+}
+
+/* Modern form elements */
+.input-modern {
+  @apply transition-all duration-300 ease-out;
+  @apply border-2 border-border bg-background/50 backdrop-blur-sm;
+  @apply focus:border-primary focus:shadow-medium focus:bg-background;
+  @apply hover:border-muted-foreground/30 hover:shadow-soft;
+  @apply placeholder:text-muted-foreground/60;
+}
+
+/* Status animations with better visual feedback */
+.status-operational {
+  @apply bg-manufacturing-operational text-white relative overflow-hidden;
+}
+
+.status-operational::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent;
+  @apply animate-pulse;
+}
+
+.status-maintenance {
+  @apply bg-manufacturing-maintenance text-black animate-bounce;
+  animation-duration: 2s;
+}
+
+.status-offline {
+  @apply bg-manufacturing-offline text-white opacity-75;
+}
+
+.status-setup {
+  @apply bg-manufacturing-setup text-white;
+  @apply animate-pulse;
+}
+
+/* Enhanced priority indicators */
+.priority-critical {
+  @apply bg-priority-critical text-white animate-pulse shadow-soft;
+  animation-duration: 1.5s;
+}
+
+.priority-high {
+  @apply bg-priority-high text-white shadow-soft;
+}
+
+.priority-medium {
+  @apply bg-priority-medium text-black shadow-soft;
+}
+
+.priority-low {
+  @apply bg-priority-low text-white shadow-soft;
+}
+
+/* Modern dragging states */
+.dragging {
+  @apply opacity-80 shadow-strong rotate-2 scale-105;
+  @apply transition-all duration-200 ease-out;
+  z-index: 100 !important;
+}
+
+.drag-over {
+  @apply bg-primary/10 border-primary border-dashed border-2;
+  @apply transition-all duration-200;
+}
+
+/* Enhanced tooltips */
+.tooltip-modern {
+  @apply animate-fade-in backdrop-blur-sm bg-background/80 shadow-medium;
+  @apply rounded-lg p-3 text-sm;
+  @apply border border-white/20;
+}
+
+/* Page transitions */
+.page-enter {
+  @apply opacity-0 translate-y-8 scale-95;
+}
+
+.page-enter-active {
+  @apply opacity-100 translate-y-0 scale-100;
+  @apply transition-all duration-300 ease-out;
+}
+
+.page-exit {
+  @apply opacity-100 translate-y-0 scale-100;
+}
+
+.page-exit-active {
+  @apply opacity-0 -translate-y-4 scale-95;
+  @apply transition-all duration-300 ease-in;
+}
+
+/* Enhanced notification animations */
+.notification-slide-in {
+  @apply animate-slide-in shadow-medium;
+}
+
+/* Interactive glow effects */
+.glow-primary {
+  @apply transition-shadow duration-300;
+}
+
+.glow-primary:hover {
+  box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+}
+
+/* Success states with better feedback */
+.success-flash {
+  @apply animate-pulse bg-success/20 border-success/50 border;
+  @apply shadow-soft rounded-md;
+}
+
+/* Error shake animation */
+.error-shake {
+  animation: shake 0.6s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  75% { transform: translateX(8px); }
+}
+
+/* Enhanced skeleton loading */
+.skeleton-modern {
+  @apply bg-gradient-to-r from-muted via-muted/50 to-muted rounded-md;
+  @apply animate-pulse;
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite ease-in-out;
+}
+
+/* Stagger animations for better UX */
+.stagger-item {
+  @apply animate-fade-in;
+  animation-delay: calc(var(--stagger-delay, 0) * 150ms);
+}
+
+/* Modern scroll indicators */
+.scroll-indicator {
+  @apply fixed bottom-4 right-4 w-12 h-12 rounded-full;
+  @apply bg-primary text-primary-foreground shadow-medium;
+  @apply flex items-center justify-center cursor-pointer;
+  @apply hover:shadow-strong hover:scale-110 transition-all duration-300;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}

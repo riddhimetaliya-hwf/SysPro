@@ -1,0 +1,227 @@
+
+@layer base {
+  :root {
+    /* Enhanced background with production-focused palette */
+    --background: 210 45% 98%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    /* Production-focused primary colors - Professional blue */
+    --primary: 210 90% 48%;
+    --primary-foreground: 210 40% 98%;
+    --primary-hover: 210 90% 55%;
+    --primary-active: 210 90% 42%;
+    --primary-glow: 210 90% 65%;
+    --primary-gradient-start: 210 90% 48%;
+    --primary-gradient-end: 210 90% 65%;
+
+    /* Enhanced secondary with blue-green tones */
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary-hover: 210 40% 94%;
+
+    /* Refined neutral colors */
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 94%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 200 84% 54%;
+
+    --radius: 0.75rem;
+    
+    /* Production-focused status colors */
+    --success: 142 76% 36%;          /* Green for completed jobs */
+    --success-foreground: 355.7 100% 97.3%;
+    --warning: 38 92% 50%;           /* Amber for delays/warnings */
+    --warning-foreground: 26 83% 14%;
+    --critical: 0 84% 60%;           /* Red for critical alerts */
+    --critical-foreground: 210 40% 98%;
+    --production: 258 90% 66%;       /* Purple for production metrics */
+    --production-foreground: 210 40% 98%;
+    --info: 210 90% 60%;             /* Professional blue for info */
+    --info-foreground: 210 40% 98%;
+
+    /* Status-specific colors for jobs */
+    --status-pending: 43 96% 56%;    /* Yellow */
+    --status-progress: 217 91% 60%;  /* Blue */
+    --status-complete: 142 76% 36%;  /* Green */
+    --status-delayed: 0 84% 60%;     /* Red */
+
+    /* Job conflict colors aligned with new system */
+    --job-no-conflict: 142 76% 36%;     /* Green for no conflicts */
+    --job-capacity-conflict: 0 84% 60%; /* Red for critical capacity issues */
+    --job-material-conflict: 38 92% 50%; /* Amber for material warnings */
+    --job-resource-conflict: 38 92% 50%; /* Amber for resource warnings */
+    --job-dependency: 217 91% 60%;      /* Blue for dependency info */
+
+    /* Manufacturing equipment status */
+    --machine-operational: 142 76% 36%;  /* Green for operational */
+    --machine-maintenance: 38 92% 50%;   /* Amber for maintenance */
+    --machine-offline: 0 84% 60%;        /* Red for offline */
+    --machine-setup: 217 91% 60%;        /* Blue for setup mode */
+
+    /* Enhanced priority system */
+    --priority-critical: 0 84% 60%;      /* Red for critical */
+    --priority-high: 38 92% 50%;         /* Amber for high */
+    --priority-medium: 217 91% 60%;      /* Blue for medium */
+    --priority-low: 142 76% 36%;         /* Green for low */
+
+    /* Material inventory status */
+    --material-in-stock: 142 76% 36%;    /* Green for in stock */
+    --material-low-stock: 38 92% 50%;    /* Amber for low stock */
+    --material-out-stock: 0 84% 60%;     /* Red for out of stock */
+
+    /* Production-focused design tokens */
+    --glass-bg: 255 255 255 / 0.1;
+    --glass-border: 255 255 255 / 0.2;
+    --shadow-soft: 0 2px 8px rgb(0 0 0 / 0.04);
+    --shadow-medium: 0 4px 16px rgb(0 0 0 / 0.08);
+    --shadow-strong: 0 8px 32px rgb(0 0 0 / 0.12);
+    
+    /* Enhanced gradients for production environment */
+    --gradient-primary: linear-gradient(135deg, hsl(210 90% 48%), hsl(210 90% 65%));
+    --gradient-success: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 76% 56%));
+    --gradient-warning: linear-gradient(135deg, hsl(38 92% 50%), hsl(43 96% 56%));
+    --gradient-critical: linear-gradient(135deg, hsl(0 84% 60%), hsl(0 84% 70%));
+    --gradient-production: linear-gradient(135deg, hsl(258 90% 66%), hsl(258 90% 76%));
+    --gradient-efficiency: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 76% 56%));
+    --gradient-alert: linear-gradient(135deg, hsl(0 84% 60%), hsl(38 92% 50%));
+    --gradient-surface: linear-gradient(135deg, hsl(var(--background)), hsl(var(--muted)));
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Enhanced dark mode primary with blue-green */
+    --primary: 200 84% 65%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary-hover: 200 84% 70%;
+    --primary-active: 200 84% 60%;
+    --primary-gradient-start: 200 84% 65%;
+    --primary-gradient-end: 160 100% 45%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --secondary-hover: 217.2 32.6% 20%;
+
+    /* Enhanced dark neutrals */
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 20%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 50.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 200 84% 65%;
+    
+    /* Dark mode design tokens */
+    --glass-bg: 255 255 255 / 0.05;
+    --glass-border: 255 255 255 / 0.1;
+    --shadow-soft: 0 2px 8px rgb(0 0 0 / 0.2);
+    --shadow-medium: 0 4px 16px rgb(0 0 0 / 0.3);
+    --shadow-strong: 0 8px 32px rgb(0 0 0 / 0.4);
+    --gradient-surface: linear-gradient(135deg, hsl(var(--background)), hsl(var(--muted)));
+  }
+}
+
+/* Enhanced utility classes */
+@layer utilities {
+  .glass-panel {
+    background: rgb(var(--glass-bg));
+    backdrop-filter: blur(12px);
+    border: 1px solid rgb(var(--glass-border));
+  }
+
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-medium { box-shadow: var(--shadow-medium); }
+  .shadow-strong { box-shadow: var(--shadow-strong); }
+
+  /* Production-focused gradients */
+  .gradient-primary { background: var(--gradient-primary); }
+  .gradient-success { background: var(--gradient-success); }
+  .gradient-warning { background: var(--gradient-warning); }
+  .gradient-critical { background: var(--gradient-critical); }
+  .gradient-production { background: var(--gradient-production); }
+  .gradient-efficiency { background: var(--gradient-efficiency); }
+  .gradient-alert { background: var(--gradient-alert); }
+  .gradient-surface { background: var(--gradient-surface); }
+
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Status-based color classes */
+  .status-pending { @apply bg-status-pending text-warning-foreground; }
+  .status-progress { @apply bg-status-progress text-info-foreground; }
+  .status-complete { @apply bg-status-complete text-success-foreground; }
+  .status-delayed { @apply bg-status-delayed text-critical-foreground; }
+
+  /* Priority-based styling */
+  .priority-critical { @apply border-l-4 border-priority-critical bg-critical/5; }
+  .priority-high { @apply border-l-4 border-priority-high bg-warning/5; }
+  .priority-medium { @apply border-l-4 border-priority-medium bg-info/5; }
+  .priority-low { @apply border-l-4 border-priority-low bg-success/5; }
+
+  /* Interactive states for production components */
+  .interactive-card {
+    @apply transition-all duration-200 ease-in-out hover:shadow-medium hover:-translate-y-0.5 cursor-pointer;
+  }
+  
+  .interactive-button {
+    @apply transition-all duration-150 ease-in-out hover:scale-105 active:scale-95;
+  }
+
+  /* Enhanced spacing system */
+  .space-1 { @apply space-y-1; }
+  .space-2 { @apply space-y-2; }
+  .space-3 { @apply space-y-3; }
+  .space-4 { @apply space-y-4; }
+  .space-6 { @apply space-y-6; }
+  .space-8 { @apply space-y-8; }
+  .space-12 { @apply space-y-12; }
+  .space-16 { @apply space-y-16; }
+  .space-24 { @apply space-y-24; }
+
+  /* Production dashboard specific utilities */
+  .dashboard-card {
+    @apply bg-card border border-border rounded-lg p-6 shadow-soft hover:shadow-medium transition-shadow duration-200;
+  }
+  
+  .metric-card {
+    @apply dashboard-card flex flex-col items-start gap-2;
+  }
+  
+  .status-indicator {
+    @apply inline-flex items-center px-2 py-1 rounded-full text-xs font-medium;
+  }
+  
+  .production-badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium;
+  }
+}

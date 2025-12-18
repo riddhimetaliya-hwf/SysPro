@@ -1,0 +1,78 @@
+
+@import './base.css';
+@import './theme.css';
+@import './layout.css';
+@import './gantt.css';
+@import './gantt-scrollbar.css';
+@import './tooltips.css';
+@import './mobile.css';
+@import './animations.css';
+
+/* Global enhancements for better UX */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced focus management */
+:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Enhanced text hierarchy for production UI */
+.text-hierarchy-1 { @apply text-3xl font-bold tracking-tight text-foreground font-display; }
+.text-hierarchy-2 { @apply text-xl font-semibold text-foreground/90 font-display; }
+.text-hierarchy-3 { @apply text-xl font-semibold leading-normal font-display; }
+.text-hierarchy-4 { @apply text-lg font-medium leading-relaxed; }
+.text-hierarchy-5 { @apply text-base font-normal leading-relaxed; }
+.text-hierarchy-6 { @apply text-sm font-normal leading-relaxed text-muted-foreground; }
+
+/* Production-specific text styles */
+.text-metric { @apply text-4xl font-bold text-production font-display; }
+.text-metric-secondary { @apply text-2xl font-bold text-primary font-display; }
+.text-metric-small { @apply text-lg font-semibold text-foreground; }
+.text-production-label { @apply text-sm font-medium text-foreground/80; }
+.text-production-caption { @apply text-xs font-medium text-muted-foreground uppercase tracking-wide; }
+
+/* Enhanced interactive states */
+.interactive-element {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+.interactive-element:hover {
+  @apply transform -translate-y-0.5 shadow-medium;
+}
+
+.interactive-element:active {
+  @apply transform translate-y-0 shadow-soft;
+}
+
+/* Consistent border radius system */
+.radius-xs { border-radius: 4px; }
+.radius-sm { border-radius: 6px; }
+.radius-md { border-radius: 8px; }
+.radius-lg { border-radius: 12px; }
+.radius-xl { border-radius: 16px; }
+.radius-2xl { border-radius: 24px; }
+
+/* Enhanced custom scrollbars with production theme */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: hsl(var(--muted) / 0.3);
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--gradient-primary);
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--gradient-success);
+}
